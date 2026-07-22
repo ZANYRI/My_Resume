@@ -28,3 +28,5 @@ public/content/
 - particles.js — фон в шапке
 - gh-pages — деплой одной командой
 - autoprefixer — кроссбраузерные префиксы при сборке
+
+## Ссылка на резюме: https://zanyri.github.io/My_Resume/
