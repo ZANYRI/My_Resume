@@ -1,0 +1,23 @@
+[
+  {
+    "id": "loft-bots",
+    "title": "loft-bots",
+    "stack": ["Go", "Docker"],
+    "status": "Telegram-бот",
+    "link": "https://github.com/ZANYRI/loft-bots"
+  },
+  {
+    "id": "ftq",
+    "title": "FTQ",
+    "stack": ["JavaScript", "Chrome Extension API"],
+    "status": "Расширение для сбора данных о кандидатах из профилей VK",
+    "link": "https://github.com/ZANYRI/FTQ"
+  },
+  {
+    "id": "quotes",
+    "title": "quotes",
+    "stack": ["Python", "Django"],
+    "status": "Агрегатор цитат с рейтингом и голосованием",
+    "link": "https://github.com/ZANYRI/quotes"
+  }
+]
