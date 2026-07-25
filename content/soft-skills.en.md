@@ -3,4 +3,3 @@ Creativity
 Time Management
 Adaptability
 Communication
-Problem Solving
