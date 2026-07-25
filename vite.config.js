@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   // Относительный путь — сайт будет работать по адресу вида
   // https://<username>.github.io/<repo-name>/ независимо от названия репозитория.
-  base: './',
+  base: '/My_Resume/',
   plugins: [react()],
 })
