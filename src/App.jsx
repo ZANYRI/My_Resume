@@ -51,7 +51,6 @@ export default function App() {
               {isVisible('soft-skills') && <SoftSkills />}
             </div>
           </div>
-          <Footer />
         </div>
         <Notification />
       </LanguageProvider>
