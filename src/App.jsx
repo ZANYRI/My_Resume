@@ -39,9 +39,9 @@ export default function App() {
           <SectionFilter selected={selectedSections} onToggle={toggleSection} onShowAll={showAll} />
           <div className="content">
             <div className="left-column">
-              {isVisible('github-activity') && <GithubActivity />}
               {isVisible('about') && <About />}
               {isVisible('experience') && <Experience />}
+              {isVisible('github-activity') && <GithubActivity />}
               {isVisible('projects') && <ProjectsSection />}
               {isVisible('articles') && <ArticlesSection />}
             </div>
