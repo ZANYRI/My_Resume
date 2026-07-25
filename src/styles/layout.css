@@ -331,6 +331,19 @@ section .skills-grid {
   color: var(--color-text-muted);
 }
 
+.education p {
+  margin: 0 0 16px;
+  line-height: 1.4;
+}
+
+.education p:last-child {
+  margin-bottom: 0;
+}
+
+.education strong {
+  color: var(--color-heading);
+}
+
 .empty-state {
   font-style: italic;
 }
@@ -344,6 +357,17 @@ section .skills-grid {
   background: var(--color-tile-bg);
   border-radius: 10px;
   padding: 16px;
+}
+
+.project-card--clickable {
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.project-card--clickable:hover,
+.project-card--clickable:focus-visible {
+  background: var(--color-hairline);
+  transform: translateY(-2px);
 }
 
 .project-card__title {

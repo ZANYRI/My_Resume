@@ -40,7 +40,19 @@ export default function ProjectsSection() {
       )}
       <div className="skills-grid projects__grid">
         {projects.map((project) => (
-          <article className="project-card" key={project.id}>
+          <article
+            className={`project-card${project.link ? ' project-card--clickable' : ''}`}
+            key={project.id}
+            role={project.link ? 'link' : undefined}
+            tabIndex={project.link ? 0 : undefined}
+            onClick={() => project.link && window.open(project.link, '_blank', 'noopener,noreferrer')}
+            onKeyDown={(e) => {
+              if (project.link && (e.key === 'Enter' || e.key === ' ')) {
+                e.preventDefault()
+                window.open(project.link, '_blank', 'noopener,noreferrer')
+              }
+            }}
+          >
             <h3 className="project-card__title">{project.title}</h3>
             {project.stack && (
               <div className="project-card__stack">
@@ -51,11 +63,15 @@ export default function ProjectsSection() {
             )}
             {project.status && <p className="project-card__status">{project.status}</p>}
             <div className="project-card__actions">
-              {project.link && (
-                <a href={project.link} target="_blank" rel="noreferrer">{t({ ru: 'Ссылка', en: 'Link' })}</a>
-              )}
               {project.file && (
-                <a href="#" onClick={(e) => { e.preventDefault(); toggleDetails(project) }}>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    toggleDetails(project)
+                  }}
+                >
                   {expandedId === project.id
                     ? t({ ru: 'Свернуть', en: 'Collapse' })
                     : t({ ru: 'Подробнее', en: 'Details' })}
@@ -63,7 +79,7 @@ export default function ProjectsSection() {
               )}
             </div>
             {expandedId === project.id && project.file && (
-              <div className="project-detail">
+              <div className="project-detail" onClick={(e) => e.stopPropagation()}>
                 <ReactMarkdown>{details[project.id] ?? t({ ru: 'Загрузка…', en: 'Loading…' })}</ReactMarkdown>
               </div>
             )}
