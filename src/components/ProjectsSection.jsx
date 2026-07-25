@@ -2,6 +2,22 @@ import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { useLang } from '../lang/LanguageContext'
 
+function parseRepo(link) {
+  const match = link?.match(/github\.com\/([^/]+)\/([^/]+)\/?$/)
+  if (!match) return null
+  return { owner: match[1], repo: match[2] }
+}
+
+async function fetchReadme(link) {
+  const repoInfo = parseRepo(link)
+  if (!repoInfo) return null
+  for (const branch of ['main', 'master']) {
+    const res = await fetch(`https://raw.githubusercontent.com/${repoInfo.owner}/${repoInfo.repo}/${branch}/README.md`)
+    if (res.ok) return res.text()
+  }
+  return null
+}
+
 export default function ProjectsSection() {
   const { t } = useLang()
   const [projects, setProjects] = useState([])
@@ -21,14 +37,18 @@ export default function ProjectsSection() {
       return
     }
     setExpandedId(project.id)
-    if (!project.file || details[project.id]) return
+    if (details[project.id]) return
     try {
-      const res = await fetch(`./content/projects/${project.file}`)
-      if (!res.ok) throw new Error('not found')
-      const text = await res.text()
-      setDetails((prev) => ({ ...prev, [project.id]: text }))
+      const readme = await fetchReadme(project.link)
+      setDetails((prev) => ({
+        ...prev,
+        [project.id]: readme ?? t({ ru: '_В этом репозитории пока нет README._', en: '_This repository has no README yet._' }),
+      }))
     } catch {
-      setDetails((prev) => ({ ...prev, [project.id]: '_Не удалось загрузить описание._' }))
+      setDetails((prev) => ({
+        ...prev,
+        [project.id]: t({ ru: '_Не удалось загрузить README._', en: '_Failed to load README._' }),
+      }))
     }
   }
 
@@ -41,15 +61,16 @@ export default function ProjectsSection() {
       <div className="skills-grid projects__grid">
         {projects.map((project) => (
           <article
-            className={`project-card${project.link ? ' project-card--clickable' : ''}`}
+            className="project-card project-card--clickable"
             key={project.id}
-            role={project.link ? 'link' : undefined}
-            tabIndex={project.link ? 0 : undefined}
-            onClick={() => project.link && window.open(project.link, '_blank', 'noopener,noreferrer')}
+            role="button"
+            aria-expanded={expandedId === project.id}
+            tabIndex={0}
+            onClick={() => toggleDetails(project)}
             onKeyDown={(e) => {
-              if (project.link && (e.key === 'Enter' || e.key === ' ')) {
+              if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault()
-                window.open(project.link, '_blank', 'noopener,noreferrer')
+                toggleDetails(project)
               }
             }}
           >
@@ -62,23 +83,7 @@ export default function ProjectsSection() {
               </div>
             )}
             {project.status && <p className="project-card__status">{project.status}</p>}
-            <div className="project-card__actions">
-              {project.file && (
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                    toggleDetails(project)
-                  }}
-                >
-                  {expandedId === project.id
-                    ? t({ ru: 'Свернуть', en: 'Collapse' })
-                    : t({ ru: 'Подробнее', en: 'Details' })}
-                </a>
-              )}
-            </div>
-            {expandedId === project.id && project.file && (
+            {expandedId === project.id && (
               <div className="project-detail" onClick={(e) => e.stopPropagation()}>
                 <ReactMarkdown>{details[project.id] ?? t({ ru: 'Загрузка…', en: 'Loading…' })}</ReactMarkdown>
               </div>

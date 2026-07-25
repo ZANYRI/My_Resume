@@ -396,15 +396,6 @@ section .skills-grid {
   margin-bottom: 10px;
 }
 
-.project-card__actions {
-  display: flex;
-  gap: 12px;
-}
-
-.project-card__actions a {
-  color: var(--color-accent);
-}
-
 .project-detail {
   margin-top: 12px;
   padding-top: 12px;

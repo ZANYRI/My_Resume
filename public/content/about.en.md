@@ -1,5 +1,7 @@
-I am a Backend developer with experience building server-side services and APIs, as well as participating in projects for the development of IT infrastructure. Proficient in JavaScript, PostgreSQL, Go (Golang), and Docker.
+Backend developer. Open in communication and comfortable working in a team, but equally capable of focused, independent work when a task calls for it — I choose the format that fits the task rather than sticking to one mode by default.
 
-- Created a browser extension using Node.js and React to automate candidate data collection, improving HR department efficiency.
-- Experienced in developing microservices in Go (Golang) using the Gin framework to create high-performance RESTful APIs.
-- Participated in projects to optimize and develop IT infrastructure, including setting up CI/CD processes and deployment automation using Docker.
+I move between regions fairly often, which has made me quick to adapt to new environments rather than depending on a fixed routine. That same trait carries over into work: I stay steady when plans or requirements shift unexpectedly.
+
+Outside of work, I play chess and board/PC games — I enjoy problems that require thinking several moves ahead. I used to do sport orienteering, which trained me to make fast decisions in the moment, without the luxury of long deliberation.
+
+I treat AI as a tool in development — I use it to speed up routine work and to learn new technologies, but I don't work on building the models themselves. My specialization is backend development.

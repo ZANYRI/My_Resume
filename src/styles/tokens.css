@@ -9,6 +9,7 @@
 
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Roboto', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'Consolas', 'Liberation Mono', monospace;
 
   --color-particles-bg: var(--color-accent);
   --color-card-bg: rgba(255, 255, 255, 0.95);
@@ -118,4 +119,9 @@ h2 {
 
 a {
   color: inherit;
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
 }
