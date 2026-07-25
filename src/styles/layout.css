@@ -735,7 +735,7 @@ section .skills-grid {
 }
 
 .projects__grid {
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 .project-card {
