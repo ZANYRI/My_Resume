@@ -29,7 +29,7 @@ export default function Header() {
         </div>
       </div>
       <div className="header-right">
-        <div className="contact-info">
+        <div className="contact-info contact-card">
           <p className="location" onClick={() => window.open(locationMapUrl, '_blank')}>
             <i className="fas fa-map-marker-alt" /> <span>{location}</span>
           </p>

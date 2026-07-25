@@ -6,6 +6,8 @@
   --color-border-soft-skills: #ff9f43;
   --color-border-projects: #a29bfe;
   --color-border-articles: #55efc4;
+  --color-border-contact: #74b9ff;
+  --color-border-github: #feca57;
 
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Roboto', sans-serif;
@@ -24,6 +26,11 @@
   --shadow-section: 0 4px 10px rgba(0, 0, 0, 0.1);
   --color-tag-text: var(--color-accent-dark);
   --color-tag-bg: rgba(55, 85, 170, 0.1);
+  --gh-level-0: var(--color-hairline);
+  --gh-level-1: #cfe0ff;
+  --gh-level-2: #8fb3f5;
+  --gh-level-3: #5286e0;
+  --gh-level-4: var(--color-accent);
 }
 
 :root[data-theme='dark'] {
@@ -40,6 +47,11 @@
   --shadow-section: 0 4px 10px rgba(0, 0, 0, 0.35);
   --color-tag-text: #a9bbf5;
   --color-tag-bg: rgba(127, 154, 226, 0.18);
+  --gh-level-0: var(--color-hairline);
+  --gh-level-1: #23345e;
+  --gh-level-2: #34508f;
+  --gh-level-3: #4a72c9;
+  --gh-level-4: #7f9cf5;
 }
 
 *,

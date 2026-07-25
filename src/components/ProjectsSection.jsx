@@ -74,7 +74,21 @@ export default function ProjectsSection() {
               }
             }}
           >
-            <h3 className="project-card__title">{project.title}</h3>
+            <div className="project-card__header">
+              <h3 className="project-card__title">{project.title}</h3>
+              {project.link && (
+                <a
+                  className="project-card__github"
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <i className="fab fa-github" />
+                </a>
+              )}
+            </div>
             {project.stack && (
               <div className="project-card__stack">
                 {project.stack.map((tech) => (

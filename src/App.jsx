@@ -2,6 +2,7 @@ import { LanguageProvider } from './lang/LanguageContext'
 import { ThemeProvider } from './lang/ThemeContext'
 import ParticlesBackground from './components/ParticlesBackground'
 import Header from './components/Header'
+import GithubActivity from './components/GithubActivity'
 import About from './components/About'
 import Experience from './components/Experience'
 import Education from './components/Education'
@@ -21,6 +22,7 @@ export default function App() {
           <Header />
           <div className="content">
             <div className="left-column">
+              <GithubActivity />
               <About />
               <Experience />
               <ProjectsSection />
