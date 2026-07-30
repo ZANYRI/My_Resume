@@ -19,5 +19,12 @@
     "stack": ["Python", "Django"],
     "status": "Агрегатор цитат с рейтингом и голосованием",
     "link": "https://github.com/ZANYRI/quotes"
+  },
+  {
+    "id": "autoshop-ai",
+    "title": "autoshop-ai",
+    "stack": ["NestJS", "Next.js", "Prisma", "PostgreSQL", "Docker"],
+    "status": "Fullstack-магазин автозапчастей с AI-поиском отзывов (Perplexica + Ollama + SearXNG)",
+    "link": "https://github.com/ZANYRI/autoshop-ai"
   }
 ]
