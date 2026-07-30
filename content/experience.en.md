@@ -6,7 +6,7 @@ PJSC "ROSTVERTOL" | August 2024 – December 2024
 - Participated in developing and consulting on inventory management software.
 
 ### Freelance Developer
-Self-Employed | September 2020 – Present
+Self-Employed | February 2023 – Present
 - Creating RESTful APIs in Go (Golang) using the Gin framework.
 - Developing databases on PostgreSQL and optimizing queries.
 - Process automation using Docker.
